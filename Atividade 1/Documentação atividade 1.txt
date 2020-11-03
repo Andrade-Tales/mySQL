@@ -1,0 +1,69 @@
+
+
+Atividade 1
+
+Crie um banco de dados para um serviço de RH de uma empresa, onde o sistema trabalhará com as informações dos funcionários desta empresa. 
+
+Crie uma tabela de funcionários e utilizando a habilidade de abstração e determine 5 atributos relevantes dos funcionários para se trabalhar com o serviço deste RH.
+
+Popule esta tabela com até 15 dados;
+
+Faça um select que retorne os funcionários com o salário maior do que 2000.
+
+Faça um select que retorne os funcionários com o salário menor do que 2000.
+
+Ao término atualize um dado desta tabela através de uma query de atualização.
+
+salve as querys para cada uma dos requisitos o exercício em um arquivo .
+
+SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
+
+Criando banco de dados RH:
+
+create database db_rh;
+
+Usando o banco de dados RH:
+
+use db_rh;
+
+Criando tabela funcionários:
+
+create table tb_funcionarios(
+
+id bigint(5) auto_increment,
+nome varchar(20) not null,
+ativo boolean,
+salario decimal(5,2) not null,
+cargo varchar(20) not null,
+primary key (id)
+);
+
+Populando tabela:
+
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Fernanda Aline", 2000, "Analista", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Thiago Almeida", 3000, "Desenvolvedor", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Barbara Abreu",  1500, "Secretária", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Lucas Lambertini", 2500, "Desenvolvedor", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Alicia Marins", 5000, "Desenvolvedora", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Tadeu Fagundes", 2000, "Segurança", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Maria Clara", 2000, "Analista", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Lucia Morua", 4000, "Desenvolvedora", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Ana Maria", 2000, "Telemarketing", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Albert Lins", 1500, "Secretário", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Luis Vieia", 6000, "Arquiteto", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Ana Luiza", 4000, "Desenvolvedora", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Juliana Faria", 2000, "Telemarketing", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Rodrigo Lara", 1000, "Estagiário", true);
+insert into tb_funcionarios(nome, salario, cargo, ativo) values ("Marcelo Pereira", 2000, "Analista", true);
+
+Atualizando a tabela:
+
+select * from tb_funcionarios
+
+Mostrando na tabela salários que são maiores que 2.000:
+
+select * from tb_funcionarios where salario > 2000
+
+Mostrando na tabela salários que são menores que 2.000:
+
+select * from tb_funcionarios where salario < 2000

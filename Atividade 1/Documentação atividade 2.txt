@@ -1,0 +1,79 @@
+Atividade 2
+
+Crie um banco de dados para um e commerce, onde o sistema trabalhará com as informações dos produtos deste ecommerce. 
+
+Crie uma tabela produtos e utilizando a habilidade de abstração e determine 5 atributos relevantes dos produtos para se trabalhar com o serviço deste ecommerce.
+
+Popule esta tabela com até 15 dados;
+
+Faça um select que retorne os produtos com o valor maior do que 500.
+
+Faça um select que retorne os produtos com o valor menor do que 500.
+
+Ao término atualize um dado desta tabela através de uma query de atualização.
+
+salve as querys para cada uma dos requisitos o exercício em um arquivo .SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
+
+
+Criando banco de dados ecommerce:
+
+create database db_ecommerce;
+
+Usando o banco de dados db_ecommerce:
+
+use db_ecommerce;
+
+Criando tabela do meu banco db_ecommerce:
+
+create table tb_produtos(
+
+id bigint auto_increment,
+
+nome varchar(30) not null,
+
+marca varchar(30) not null,
+
+cor varchar(30),
+
+preco decimal(10,2),
+
+ativo boolean,
+
+primary key (id)
+
+
+);
+
+Atualizando tabela:
+
+select * from tb_produtos
+
+Populando tabela produtos:
+
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Tênis", "Nike","preto", 299.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Tênis", "DC","preto", 399.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Tênis", "URGH","branco", 269.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Tênis", "All-Star","vermelho", 199.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Tênis", "Vans","azul", 299.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Blusa", "Nike","preto", 499.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Blusa", "DC","preto", 450.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Blusa", "URGH","amarela", 329.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Blusa", "Vans","preto", 369.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Blusa", "New-Skate","verde", 259.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Camiseta", "Nike","branco", 59.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Camiseta", "New-Skate","preto", 49.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Camiseta", "Vans","vermelha", 39.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Camiseta", "URGH","preto", 69.99, true);
+insert into tb_produtos(nome, marca, cor, preco,ativo ) values ("Camiseta", "DC","preto", 89.99, true);
+
+Atualizando a tabela:
+
+select * from tb_produtos
+
+Mostrando na tabela preços que são maiores que 500:
+
+select * from tb_produtos where preco > 500
+
+Mostrando na tabela preços que são menores que 500:
+
+select * from tb_produtos where preco < 500

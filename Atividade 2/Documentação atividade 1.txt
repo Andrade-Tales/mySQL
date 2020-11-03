@@ -1,0 +1,87 @@
+ATIVIDADE DE BANCO DE DADOS RELACIONAL 
+
+Crie um banco de dados com o nome de “db_diversos”;
+Dentro desse banco de dados devem conter as seguintes tabelas e os seguintes SELECT’s:
+1.	Uma tabela que represente uma escola, contendo: 
+•	ID do aluno;
+•	Idade do aluno;
+•	+ 5 informações que você considera importante;
+
+*Importante a tabela precisa ter 15 dados de alunos;
+
+Para essa tabela considere fazer o SELECT que retorne:
+•	Todos os participantes maiores que 18 anos;
+•	Todos os participantes menores que 18 anos;
+•	Todos os participantes com a idade entre 20 e 25 anos;
+
+Criando banco de dados diversos:
+
+create database db_diversos
+
+Usando banco de dados diversos:
+
+use db_diversos
+
+Criando tabela em meu banco de dados:
+
+create table tb_escola(
+
+id bigint auto_increment,
+
+nome varchar(30) not null,
+
+idade int not null,
+
+numero int,
+
+ensino varchar(30),
+
+periodo varchar(30),
+
+ativo boolean,
+
+primary key (id)
+
+)
+
+
+Atualizando tabela:
+
+select * from tb_escola
+
+Populando tabela escolar:
+
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Tales Andrade", 23, 1, "Superior", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Lucas Nascimento", 17, 2, "Médio", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Alana Mesquita", 18, 3, "Médio", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Flavio Souza", 19, 4, "Superior", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Larissa Cavalcante", 18, 5, "Superior", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Isabeli Rodrigues", 20, 6, "Superior", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Weslley Carvalho", 17, 7, "Médio", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Adriano Luca", 21, 8, "Superior", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Ana Clara", 23, 9, "Superior", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Cezar Augusto", 22, 10, "Superior", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Lucas Diniz", 14, 11, "Fundamental", "Diurno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Alex Silva", 24, 12, "Superior", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Bruna Torres", 21, 13, "Superior", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Fernando Costa", 18, 14, "Médio", "Noturno", true);
+insert into tb_escola(nome, idade, numero, ensino, periodo, ativo ) values ("Pedro Barbosa", 13, 15, "Fundamental", "Diurno", true);
+
+Atualizando a tabela:
+
+select * from tb_escola
+
+Mostrando na tabela idades que são maiores que 18:
+
+select * from tb_escola where idade > 18
+
+Mostrando na tabela idades que são menores que 18:
+
+select * from tb_escola where idade < 18
+
+Mostrando na tabela alunos com a idade entre 20 e 25 anos:
+
+select * from tb_escola where idade  >= 20 and idade <=25
+
+
+

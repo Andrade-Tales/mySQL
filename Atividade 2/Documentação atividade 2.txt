@@ -1,0 +1,83 @@
+2.	Crie uma tabela que represente um petshop, contendo: 
+•	ID do animal;
+•	Peso do animal;
+•	+ 5 informações que você considera importante;
+
+*Importante a tabela também precisa ter 15 dados;
+
+Para essa tabela considere fazer o SELECT que retorne:
+•	Todos os animais maiores que 10 kilos;
+•	Todos os animais menores que 10 kilos;
+•	Todos os animais es com a idade entre 10 e 30 kilos;
+
+Criando banco de dados petshop:
+
+create database bd_petshop
+
+Usando o banco de dados petshop:
+
+use db_petshop
+
+Criando tabela em meu banco de dados:
+
+create table tb_animais(
+
+id bigint auto_increment,
+
+peso decimal(10,2),
+
+nome varchar(30),
+
+cor varchar(30),
+
+raça varchar(30),
+
+estado varchar(30),
+
+genero varchar(30),
+
+ativo boolean,
+
+primary key (id)
+
+
+);
+
+Atualizando tabela:
+
+select * from tb_animais
+
+Populando tabela animais:
+
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Pitu", 6.0, "Gato", "Preta", "Femea", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Plutus", 15.0, "Cachorro", "Preto", "Macho", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Leona", 0.4, "Rammster", "Marrom", "Femea", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Louro", 0.7, "Papagaio", "Verde", "Macho", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Lilica", 0.3, "Chinchila", "Cinza", "Femea", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Guenaro", 19.0, "Cachorro", "Branco", "Macho", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Polar", 8.0, "Gato", "Manchada", "Femea", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Spike", 35.0, "Cachorro", "Preto", "Macho", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Rana", 24.0, "Cachorro", "Caramelo", "Femea", "Grave", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Tchoker", 27.0, "Cachorro", "Preto", "Macho", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Belinha", 12.0, "Cachorro", "Branco", "Femea", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Lenus", 6.0, "Gato", "Marrom", "Macho", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Nina", 9.0, "Gato", "Cinza", "Femea", "Moderado", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Luke", 15.0, "Cachorro", "Preto", "Macho", "Grave", true);
+insert into tb_animais(nome, peso, raça, cor, genero, estado, ativo) values ("Tequila", 6.0, "Gato", "Manchada", "Femea", "Moderado", true);
+
+
+Atualizando a tabela:
+
+select * from tb_animais
+
+Mostrando na tabela animais com o peso maior que 10:
+
+select * from tb_animais where peso > 10
+
+Mostrando na tabela animais com o peso menor que 10:
+
+select * from tb_animais where peso < 10
+
+Mostrando na tabela animais com o peso entre 10 e 30 kilos:
+
+select * from tb_animais where peso  >= 10 and peso <= 30

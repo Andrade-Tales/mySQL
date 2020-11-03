@@ -1,0 +1,102 @@
+3.	Uma tabela que represente um varejo, contendo: 
+•	ID do produto;
+•	Preço do produto;
+•	Categoria do produto ( Ex: quarto/sala / cozinha / banheiro)
+•	 4 informações que você considera importante;
+
+
+*Importante a tabela também precisa ter 15 dados;
+
+Para essa tabela considere fazer o SELECT que retorne:
+•	Todos os produtos que comecem com a letra “A”;
+•	Todos os produtos de uma determinada categoria;
+•	Todos os produtos entre $ 1.000 e 1.500 de uma determinada categoria; 
+•	Todos os produtos listados por uma categoria utilizando like;
+
+
+Favor subir todos os SELECT’s para o GitHub e compartilhar o link na plataforma
+
+Criando banco de dados loja:
+
+create database db_loja
+
+Usando banco de dados loja:
+
+use db_loja
+
+Criando tabela varejo:
+
+create table tb_varejo(
+
+id bigint auto_increment,
+
+preco decimal(10,2),
+
+categoria varchar(30),
+
+nomeProduto varchar(30),
+
+ativo boolean,
+
+primary key (id)
+
+);
+
+Populando tabela varejo:
+
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Janela de madeira", "Quarto", 1486.00, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Porta de madeira", "Quarto", 455.00, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Janela de alumínio", "Sala", 530.90, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Porta de alumínio", "Sala", 556.90, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Pia de banheiro", "Banheiro", 249.90, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Vaso sanitário", "Banheiro", 389.90, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Cama solteiro", "Quarto", 303.90, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Cama casal", "Quarto", 1499.99, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Guarda-Roupa casal", "Quarto", 503.40, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Guarda-Roupa solteiro", "Quarto", 370.99, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Armário cozinha", "Cozinha", 397.13, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Janela de madeira", "Quarto", 1300.00, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Porta de alumínio", "Cozinha", 656.90, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Cama casal", "Quarto", 1399.99, true);
+insert into tb_varejo(nomeProduto, categoria, preco, ativo) values ("Vaso sanitário", "Banheiro", 349.50, true);
+
+Retornando produtos com letra "A":
+
+SELECT
+  nomeProduto
+FROM
+  tb_varejo
+WHERE
+tb_varejo.nomeProduto Like "A%"
+
+Retornando produtos de uma categoria:
+
+SELECT
+ nomeProduto
+FROM
+  tb_varejo
+WHERE
+tb_varejo.categoria Like "Banheiro"
+
+Mostrando produtos com o preço entre 1000.00 e 1500.00 de uma determinada categoria:
+
+select nomeProduto, preco, categoria
+ from tb_varejo
+ where categoria = "Quarto"
+and preco >= 1000.00 and preco <= 1500.00
+
+Retornando produtos listados por categoria:
+
+SELECT
+  categoria, nomeProduto
+FROM
+  tb_varejo
+WHERE
+tb_varejo.categoria Like "B%"
+
+
+
+
+
+
+

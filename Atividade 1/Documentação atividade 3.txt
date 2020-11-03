@@ -1,0 +1,78 @@
+Atividade 3
+
+Crie um banco de dados para um registro de uma escola, onde o sistema trabalhará com as informações dos alunos deste registro dessa escola. 
+
+Crie uma tabela alunos/a e utilizando a habilidade de abstração e determine 5 atributos relevantes dos alunos/a para se trabalhar com o serviço dessa escola.
+
+Popule esta tabela com até 15 dados;
+
+Faça um select que retorne o/as alunos/a com a nota maior do que 7.
+
+Faça um select que retorne o/as alunos/a com a nota menor do que 7.
+
+Ao término atualize um dado desta tabela através de uma query de atualização.
+
+salve as querys para cada uma dos requisitos o exercício em um arquivo .SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
+
+
+Criando banco de dados escola:
+
+create database db_escola;
+
+Usando o banco de dados escola:
+
+use db_escola;
+
+Criando tabela em meu banco de dados escola:
+
+create table tb_alunos(
+
+id bigint auto_increment,
+
+nome varchar(30) not null,
+
+numero int,
+
+materia varchar(30) not null,
+
+nota decimal(10,2),
+
+ativo boolean,
+
+primary key (id)
+
+)
+
+Atualizando tabela:
+
+select * from tb_alunos
+
+Populando tabela alunos:
+
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Ana Clara", 1,"Matemática", 9.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Marcos Henrique", 2,"Matemática", 8.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Lucas Almeida", 3,"Matemática", 7.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Maria Pontes", 4,"Matemática", 6.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Lucia Arantes", 5,"Matemática", 5.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Thiago Santos", 6,"Matemática", 4.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Wesley Souza", 7,"Matemática", 3.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Beatriz Fagundes", 8,"Matemática", 2.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Henrique Dornelas", 9,"Matemática", 1.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Matheus Lira", 10,"Matemática", 9.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Carolina Alves", 11,"Matemática", 8.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Fernanda Resende", 12,"Matemática", 7.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Luisa Félix", 13,"Matemática", 6.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Valter Santos", 14,"Matemática", 5.0, true);
+insert into tb_alunos(nome, numero, materia, nota, ativo ) values ("Julia Tedesco", 15,"Matemática", 4.0, true);
+
+Atualizando a tabela:
+
+select * from tb_alunos
+
+Mostrando na tabela notas que são maiores que 7:
+
+select * from tb_alunos where nota > 7
+
+Mostrando na tabela notas que são menores que 7:
+
+select * from tb_alunos where preco < 7
